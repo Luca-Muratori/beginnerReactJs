@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect } from "react";
 
-export default function Count() {
-  const [number,setNumber]=useState(4)
+
+export default function Count({number}) {
+  useEffect(()=>{
+    document.title=`You clicked ${number} times`
+  }, [number])
+  
   return (
     <>
       <CountLabel />
-      <span>{number}</span>
+      <span className={number > 5 ? 'limit':'correct'} >{number}</span>
     </>
   );
 }

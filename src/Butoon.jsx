@@ -1,9 +1,5 @@
-export default function Butoon() {
-  const handleClick=()=>{
-    console.log("clicked")
-  }
-
+export default function Butoon({setNumber}) {
   return (
-    <button onClick={handleClick}>+</button> 
+    <button className='color' onClick={()=>{setNumber((prev)=>prev+1)}}>+</button> 
   )
 }
